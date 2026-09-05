@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Wave Meet Sync",
+  "version": "1.1.0",
+  "description": "Mirrors the Google Meet mute button to the Elgato Wave:3 hardware mute button, and back.",
+  "minimum_chrome_version": "116",
+  "host_permissions": [
+    "https://meet.google.com/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
